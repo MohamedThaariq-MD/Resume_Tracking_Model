@@ -1,0 +1,13 @@
+@echo off
+echo Starting Resume Tracker Services...
+
+echo Starting ML Service...
+start cmd /k "cd ML && venv\Scripts\activate && uvicorn main:app --reload --port 8000"
+
+echo Starting Backend API...
+start cmd /k "cd Backend API && npm run start:dev"
+
+echo Starting Frontend...
+start cmd /k "cd Frontend && npm run dev"
+
+echo All services started!
